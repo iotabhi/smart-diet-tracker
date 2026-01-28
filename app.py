@@ -6,7 +6,7 @@ from datetime import date
 from sklearn.linear_model import LinearRegression
 from urllib.parse import quote_plus
 import pymongo
-
+import certifi
 # -------------------- ARCHITECTURE & PATHS --------------------
 base_dir = os.path.dirname(os.path.abspath(__file__))
 model_path = os.path.join(base_dir, 'models', 'calorie_model.pkl')
@@ -24,11 +24,12 @@ st.set_page_config(
 @st.cache_resource
 # -------------------- DATABASE CONNECTION (UNIVERSAL) --------------------
 @st.cache_resource
+# -------------------- DATABASE CONNECTION (SSL FIX) --------------------
+@st.cache_resource
+# -------------------- DATABASE CONNECTION (CERTIFI FIX) --------------------
+@st.cache_resource
 def init_connection():
     try:
-        # We are REMOVING the check for st.secrets for now.
-        # This will work on your Laptop AND on Streamlit Cloud directly.
-        
         # 1. DEFINE CREDENTIALS
         username = quote_plus("admin")
         password = quote_plus("Abhi@1994") 
@@ -36,13 +37,13 @@ def init_connection():
         # 2. CREATE URI
         uri = f"mongodb+srv://{username}:{password}@cluster0.ojk15i9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
         
-        # 3. CONNECT
-        return pymongo.MongoClient(uri)
+        # 3. CONNECT (WITH CERTIFI)
+        # This tells Python exactly where to find the secure certificates
+        return pymongo.MongoClient(uri, tlsCAFile=certifi.where())
              
     except Exception as e:
         st.error(f"❌ Connection Error: {e}")
         return None
-
 def save_to_mongo(data):
     """Saves a single daily log entry to MongoDB"""
     client = init_connection()
