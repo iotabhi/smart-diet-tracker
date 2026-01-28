@@ -1,0 +1,21 @@
+ID,Food_Item,Calories,Protein_g,Fat_g,Carbs_g,Serving_Unit
+1,Roti,100,3.0,0.5,20,1 piece
+2,Plain Rice,130,2.7,0.3,28,1 katori
+3,Dal Fry,150,8.0,5.0,18,1 katori
+4,Paneer Butter Masala,350,12.0,25.0,15,1 plate
+5,Chole,250,10.0,12.0,30,1 plate
+6,Aloo Paratha,280,6.0,12.0,35,1 piece
+7,Dosa,160,4.0,6.0,25,1 piece
+8,Idli,60,2.0,0.2,12,1 piece
+9,Samosa,260,4.0,18.0,28,1 piece
+10,Tea (Chai),80,1.0,2.0,12,1 cup
+11,Curd (Dahi),100,4.0,4.0,6,1 katori
+12,Chicken Curry,300,25.0,18.0,5,1 plate
+13,Egg Bhurji,150,12.0,10.0,1,2 eggs
+14,Poha,180,4.0,5.0,30,1 plate
+15,Upma,200,5.0,6.0,30,1 plate
+16,Gulab Jamun,150,2.0,8.0,20,1 piece
+17,Biscuits,40,0.5,2.0,6,1 piece
+18,Apple,52,0.3,0.2,14,1 medium
+19,Banana,89,1.1,0.3,23,1 medium
+20,Mixed Sabzi,120,3.0,8.0,12,1 katori
