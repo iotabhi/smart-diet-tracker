@@ -27,7 +27,6 @@ A full-stack health and nutrition application tailored for **Indian Diets**, fea
 
 ## 📂 Project Structure
 
-```text
 smart-diet-tracker/
 ├── app.py                # Main application source code
 ├── requirements.txt      # Python dependencies
@@ -37,6 +36,7 @@ smart-diet-tracker/
 ├── models/
 │   └── calorie_model.pkl        # Pre-trained ML model for prediction
 └── .gitignore            # Files excluded from Git
+
 ## ⚙️ How to Run Locally
 
 If you want to run this app on your own machine:
