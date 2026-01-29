@@ -28,19 +28,13 @@ st.set_page_config(
 @st.cache_resource
 # -------------------- DATABASE CONNECTION (CERTIFI FIX) --------------------
 @st.cache_resource
+# -------------------- DATABASE CONNECTION (SECRETS MANAGER) --------------------
+@st.cache_resource
 def init_connection():
     try:
-        # 1. DEFINE CREDENTIALS
-        username = quote_plus("admin")
-        password = quote_plus("Abhi@1994") 
-        
-        # 2. CREATE URI
-        uri = f"mongodb+srv://{username}:{password}@cluster0.ojk15i9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-        
-        # 3. CONNECT (WITH CERTIFI)
-        # This tells Python exactly where to find the secure certificates
-        return pymongo.MongoClient(uri, tlsCAFile=certifi.where())
-             
+        # This looks for the password in the Streamlit Cloud "Secrets" box
+        # We also added the 'tlsAllowInvalidCertificates' flag just to be safe
+        return pymongo.MongoClient(st.secrets["mongo"]["uri"], tlsAllowInvalidCertificates=True)
     except Exception as e:
         st.error(f"❌ Connection Error: {e}")
         return None
