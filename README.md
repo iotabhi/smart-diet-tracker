@@ -7,7 +7,7 @@
 
 A full-stack health and nutrition application tailored for **Indian Diets**, featuring AI-based calorie estimation and real-time cloud data synchronization.
 
-🔗 **Live Demo:** [Click here to view App](https://share.streamlit.io/iotabhi/smart-diet-tracker)
+🔗 **Live Demo:** [Click here to view App](https://smart-diet-tracker-iotabhi.streamlit.app/)
 
 ## 🚀 Key Features
 
